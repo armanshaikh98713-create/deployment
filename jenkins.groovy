@@ -15,8 +15,8 @@ pipeline {
         }
     
     }
-    stage('deplyment'){
-            sshagent(['nginx']){
+    stage('sending codet'){
+            sshagent(['deplyment']){
                 sh "scp -o StrictKeyChecking=no *ubuntu@13.234.35.251:tmp" 
             }
     }
