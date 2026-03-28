@@ -1,14 +1,17 @@
-// Hello World in Groovy
+pipeline {
+    agent any
 
-def name = "Arman"
-def course = "DevOps"
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git branch: 'main', url: 'https://github.com/armanshaikh98713-create/university-website.git'
+            }
+        }
 
-println "Hello, my name is ${name}"
-println "I am learning ${course}"
-
-stage ("pulling code"){
-    steps
-    {
-        git branch: 'main',url:https://github.com/armanshaikh98713-create/university-website.git
+        stage('Build') {
+            steps {
+                echo 'Build Stage'
+            }
+        }
     }
 }
