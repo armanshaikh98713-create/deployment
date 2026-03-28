@@ -15,5 +15,10 @@ pipeline {
         }
     
     }
+    stage('sending code'){
+            sshagent(['nginx']){
+                sh "scp -o StrictKeyChecking=no *ubuntu@13.234.35.251:tmp" 
+            }
+    }
 }
 }
